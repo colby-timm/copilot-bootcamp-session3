@@ -14,7 +14,7 @@ In this exercise, you'll guide GitHub Copilot's Agent mode to create a functiona
 To ensure the app's core features are clearly documented, you will:
 
 1. Open the **Copilot** chat panel and switch to **Agent** mode using the dropdown menu.
-2. In the Copilot chat input field, instruct Copilot to create a new file at `docs/functional-requirements.md` containing a bullet point list of the following requirements:
+2. In the Copilot chat input field, ask Copilot to create a new file at `docs/functional-requirements.md` that lists the core functional requirements for the TODO app. You can use your own words, as long as the following requirements are clearly included:
    - The user can add a task to the TODO list, including a due date.
    - The user can edit a task in their TODO list or its due date by clicking on the text of the task or on its due date.
    - The user can delete a task from their TODO list by clicking on a trash can icon to the right of the due date.
