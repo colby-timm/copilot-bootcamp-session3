@@ -12,7 +12,7 @@ permissions:
   issues: write
 
 env:
-  STEP_1_FILE: ".github/steps/2-1-requirements-context.md"
+  STEP_1_FILE: ".github/steps/2-1-add-requirements-context.md"
 
 jobs:
   start_exercise:
