@@ -45,11 +45,4 @@ The project uses npm workspaces to manage the monorepo structure. You can:
 
 ## Deployment
 
-Deployment instructions and environments will be covered in the bootcamp sessions.
-
-## Next Steps
-
-Refer to the other documentation files for more detailed guidance:
-- [General Guidelines](./general-guidelines.md)
-- [Code Style](./code-style.md)
-- [Testing Practices](./testing-practices.md)
+General Guidelines, Code Style and Testing Practices will be covered in the bootcamp sessions.
