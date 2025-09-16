@@ -4,22 +4,23 @@ _Congratulations, you've completed session 3 of the Copilot Bootcamp tutorial an
 
 <img src="https://octodex.github.com/images/jetpacktocat.png" alt=celebrate width=200 align=right>
 
+
 Here's a recap of your accomplishments:
 
-- Set up your GitHub Codespace development environment
-- Used GitHub Copilot Agent Mode with Claude Sonnet 4 to modify application content
-- Implemented delete functionality across both frontend and backend components
-- Learned how to use Copilot to handle complex, multi-step coding tasks
+- Used Copilot Agent Mode to guide the creation of key project context files
+- Added functional requirements documentation to clarify app features
+- Established UI guidelines for consistency, responsiveness, and accessibility
+- Documented testing guidelines covering unit, integration, and end-to-end tests
+- Summarized coding style and code quality principles for maintainable code
+- Practiced instructing Copilot in your own words to automate and document project standards
 
 ### What's next?
 
-- Session 4
-  - Gain an understanding of how agent mode can write and run your tests for you effectively
+- Session 3
+  - Run through a discovery exercise to generate a feature backlog 
 - Continue working on this project
   - Use Copilot to add filtering functionality for the items list
-  - Implement item editing capabilities
   - Add search functionality to the application
-  - Create unit tests for your components and endpoints
 - Explore different AI models with Copilot
   - Try using GPT-4o for complex architectural decisions
   - Use Claude models for natural language processing tasks
@@ -38,4 +39,4 @@ Here's a recap of your accomplishments:
 - **Switch between AI models**: [GitHub Copilot with Different Models](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/using-github-copilot-chat#selecting-a-different-model)
 - **Complete documentation**: [GitHub Copilot Documentation](https://docs.github.com/en/copilot)
 
-Congratulations on completing the Slalom Copilot Bootcamp, and thank you for participating! We hope you've gained valuable insights into how GitHub Copilot can enhance your development workflow and productivity.
+Congratulations on completing Session 2 of the AI Coding Assistant Enablement Bootcamp for the SE capability, and thank you for participating! We hope you've gained valuable insights into how GitHub Copilot can enhance your development workflow and productivity.
