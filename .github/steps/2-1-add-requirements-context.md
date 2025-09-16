@@ -1,4 +1,4 @@
-# Step 3-1: Add Functional Requirements Context
+# Step 2-1: Add Functional Requirements Context
 
 ## Goal
 Create a clear set of functional requirements for the TODO app to guide future development and ensure all core features are documented.
