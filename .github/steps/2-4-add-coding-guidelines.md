@@ -1,4 +1,4 @@
-# Step 3-4: Add Coding Guidelines
+# Step 2-4: Add Coding Guidelines
 
 ## Goal
 Document clear coding guidelines for the TODO app to ensure code consistency, quality, and maintainability across the project.

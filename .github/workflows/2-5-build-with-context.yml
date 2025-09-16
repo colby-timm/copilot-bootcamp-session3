@@ -1,4 +1,4 @@
-name: Step 3-5 - Build with Context
+name: Step 2-5 - Build with Context
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
     issues: write
 
   env:
-    STEP_3_FILE: ".github/steps/3-5-build-with-context.md"
+    STEP_2_FILE: ".github/steps/2-5-build-with-context.md"
 
 jobs:
   find_exercise:
@@ -80,7 +80,7 @@ jobs:
         with:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           template-vars: |
-            step_number: 3-5
+            step_number: 2-5
             passed: ${{ steps.check_mui.outcome == 'success' && steps.check_unit_tests.outcome == 'success' && steps.check_integration_tests.outcome == 'success' && steps.check_e2e_tests.outcome == 'success' }}
             results_table:
               - description: "The MUI package should be present in frontend dependencies."
@@ -140,6 +140,6 @@ jobs:
       steps:
         - name: Disable current workflow and enable next one
           run: |
-            gh workflow disable "Step 3-5"
+            gh workflow disable "Step 2-5"
           env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

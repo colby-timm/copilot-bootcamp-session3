@@ -1,4 +1,4 @@
-# Step 3-3: Add Testing Guidelines
+# Step 2-3: Add Testing Guidelines
 
 ## Goal
 Document clear testing guidelines for the TODO app to ensure code quality and reliability across the project.

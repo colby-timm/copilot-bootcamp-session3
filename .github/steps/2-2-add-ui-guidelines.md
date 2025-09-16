@@ -1,4 +1,4 @@
-# Step 3-2: Add UI Guidelines
+# Step 2-2: Add UI Guidelines
 
 ## Goal
 Document the core UI guidelines for the TODO app to ensure a consistent, accessible, and responsive user experience.

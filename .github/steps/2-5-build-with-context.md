@@ -1,4 +1,4 @@
-# Step 3-5: Build with Context
+# Step 2-5: Build with Context
 
 ## Goal
 Leverage all the context and documentation you have created to guide Copilot in expanding the TODO app.

@@ -1,4 +1,4 @@
-name: Step 3-2 - Add UI Guidelines
+name: Step 2-2 - Add UI Guidelines
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
     issues: write
 
   env:
-    STEP_3_FILE: ".github/steps/3-2-add-ui-guidelines.md"
+    STEP_2_FILE: ".github/steps/2-2-add-ui-guidelines.md"
 
 jobs:
   find_exercise:
@@ -71,7 +71,7 @@ jobs:
         with:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           template-vars: |
-            step_number: 3-2
+            step_number: 2-2
             passed: ${{ steps.check_ui_guidelines.outcome == 'success' && steps.check_copilot_instructions.outcome == 'success' }}
             results_table:
               - description: "The file 'ui-guidelines.md' should exist under `docs/` folder and describe the UI requirements."
@@ -102,7 +102,7 @@ jobs:
         with:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
           template-vars: |
-            next_step_number: 3-3
+            next_step_number: 2-3
 
       - name: Update comment - step finished
         run: |
@@ -136,7 +136,7 @@ jobs:
         - name: Create comment - add step content
           run: |
             gh issue comment "$ISSUE_URL" \
-              --body-file "$STEP_3_FILE"
+              --body-file "$STEP_2_FILE"
           env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -149,7 +149,7 @@ jobs:
 
         - name: Disable current workflow and enable next one
           run: |
-            gh workflow disable "Step 3-2"
-            gh workflow enable "Step 3-3"
+            gh workflow disable "Step 2-2"
+            gh workflow enable "Step 2-3"
           env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
