@@ -1,4 +1,4 @@
-name: Step 3-4 - Add Coding Guidelines
+name: Step 3-5 - Build with Context
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
     issues: write
 
   env:
-    STEP_3_FILE: ".github/steps/3-4-add-coding-guidelines.md"
+    STEP_3_FILE: ".github/steps/3-5-build-with-context.md"
 
 jobs:
   find_exercise:
@@ -47,20 +47,32 @@ jobs:
         
         # START: Check practical exercise
 
-      - name: Check for coding-guidelines.md
-        id: check_coding_guidelines
+      - name: Check for MUI package
+        id: check_mui
         continue-on-error: true
         run: |
-          if [ ! -f docs/coding-guidelines.md ]; then
-            echo "docs/coding-guidelines.md not found!"
+          if ! grep -q '@mui/material' packages/frontend/package.json; then
+            echo "@mui/material not found in frontend package.json!"
             exit 1
           fi
 
-      - name: Check copilot-instructions.md references coding-guidelines
-        id: check_copilot_instructions
+      - name: Check for unit tests
+        id: check_unit_tests
         continue-on-error: true
         run: |
-          grep -q 'coding-guidelines.md' .github/copilot-instructions.md
+          find packages -type f -name '*test.js' | grep -q .
+
+      - name: Check for integration tests
+        id: check_integration_tests
+        continue-on-error: true
+        run: |
+          find packages -type f -name '*integration*test.js' | grep -q .
+
+      - name: Check for end-to-end tests
+        id: check_e2e_tests
+        continue-on-error: true
+        run: |
+          find packages -type f -name '*e2e*test.js' | grep -q .
 
       - name: Build message - step results
         id: build-message-step-results
@@ -68,15 +80,21 @@ jobs:
         with:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           template-vars: |
-            step_number: 3-4
-            passed: ${{ steps.check_coding_guidelines.outcome == 'success' && steps.check_copilot_instructions.outcome == 'success' }}
+            step_number: 3-5
+            passed: ${{ steps.check_mui.outcome == 'success' && steps.check_unit_tests.outcome == 'success' && steps.check_integration_tests.outcome == 'success' && steps.check_e2e_tests.outcome == 'success' }}
             results_table:
-              - description: "The file 'coding-guidelines.md' should exist under `docs/` folder and describe the coding style and quality principles."
-                passed: ${{ steps.check_coding_guidelines.outcome == 'success' }}
-                error_message: "The file 'docs/coding-guidelines.md' was not found or does not describe all the required coding guidelines."
-              - description: "The file '.github/copilot-instructions.md' should reference 'coding-guidelines.md'"
-                passed: ${{ steps.check_copilot_instructions.outcome == 'success' }}
-                error_message: "The file '.github/copilot-instructions.md' does not reference 'coding-guidelines.md'."
+              - description: "The MUI package should be present in frontend dependencies."
+                passed: ${{ steps.check_mui.outcome == 'success' }}
+                error_message: "@mui/material is not found in packages/frontend/package.json."
+              - description: "Unit tests should be present."
+                passed: ${{ steps.check_unit_tests.outcome == 'success' }}
+                error_message: "No unit test files found (e.g., *test.js)."
+              - description: "Integration tests should be present."
+                passed: ${{ steps.check_integration_tests.outcome == 'success' }}
+                error_message: "No integration test files found (e.g., *integration*test.js)."
+              - description: "End-to-end tests should be present."
+                passed: ${{ steps.check_e2e_tests.outcome == 'success' }}
+                error_message: "No end-to-end test files found (e.g., *e2e*test.js)."
 
       - name: Create comment - step results
         run: |
@@ -99,7 +117,7 @@ jobs:
         with:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
           template-vars: |
-            next_step_number: 3-5
+            next_step_number: 4-1
 
       - name: Update comment - step finished
         run: |
@@ -110,7 +128,7 @@ jobs:
           ISSUE_BODY: ${{ steps.build-message-step-finish.outputs.updated-text }}
 
       - name: Success
-        run: echo "Coding guidelines and Copilot instructions are present and correct."
+        run: echo "Build with context checks passed."
       
     post_next_step_content:
       name: Post next step content
@@ -120,33 +138,8 @@ jobs:
         ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
 
       steps:
-        - name: Checkout
-          uses: actions/checkout@v4
-
-        - name: Get response templates
-          uses: actions/checkout@v4
-          with:
-            repository: skills/exercise-toolkit
-            path: exercise-toolkit
-            ref: v0.4.0
-
-        - name: Create comment - add step content
-          run: |
-            gh issue comment "$ISSUE_URL" \
-              --body-file "$STEP_3_FILE"
-          env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-        - name: Create comment - watching for progress
-          run: |
-            gh issue comment "$ISSUE_URL" \
-              --body-file exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
-          env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
         - name: Disable current workflow and enable next one
           run: |
-            gh workflow disable "Step 3-4"
-            gh workflow enable "Step 3-5"
+            gh workflow disable "Step 3-5"
           env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
