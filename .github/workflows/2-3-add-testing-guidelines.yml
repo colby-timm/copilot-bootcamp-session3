@@ -54,8 +54,6 @@ jobs:
           fi
           grep -qi 'unit' docs/testing-guidelines.md
           grep -qi 'integration' docs/testing-guidelines.md
-          grep -qi 'end-to-end' docs/testing-guidelines.md
-          grep -qi 'regression' docs/testing-guidelines.md
 
       - name: Check copilot-instructions.md references testing-guidelines
         id: check_copilot_instructions

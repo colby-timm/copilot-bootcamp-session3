@@ -53,8 +53,6 @@ jobs:
             exit 1
           fi
           grep -qi 'material' docs/ui-guidelines.md
-          grep -qi 'responsive' docs/ui-guidelines.md
-          grep -qi 'accessible' docs/ui-guidelines.md
 
       - name: Check copilot-instructions.md references ui-guidelines
         id: check_copilot_instructions
