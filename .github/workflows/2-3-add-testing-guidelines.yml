@@ -16,8 +16,6 @@ jobs:
     name: Find Exercise Issue
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
       - name: Check if any issue exists
         run: |
           ISSUE_URL=$(gh issue list --limit 1 --json url --jq '.[0].url')
