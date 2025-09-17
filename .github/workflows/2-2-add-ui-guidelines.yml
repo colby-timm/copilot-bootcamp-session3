@@ -1,4 +1,4 @@
-name: Step 2-2 - Add UI Guidelines
+name: Step 2-2 # Add UI Guidelines
 
 on:
   push:
@@ -6,13 +6,10 @@ on:
       - main
   workflow_dispatch:
 
-  permissions:
-    contents: read
-    actions: write
-    issues: write
-
-  env:
-    STEP_2_FILE: ".github/steps/2-2-add-ui-guidelines.md"
+permissions:
+  contents: read
+  actions: write
+  issues: write
 
 jobs:
   find_exercise:
@@ -115,41 +112,41 @@ jobs:
       - name: Success
         run: echo "UI guidelines and Copilot instructions are present and correct."
       
-    post_next_step_content:
-      name: Post next step content
-      needs: [find_exercise, check_step_work]
-      runs-on: ubuntu-latest
-      env:
-        ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
+  post_next_step_content:
+    name: Post next step content
+    needs: [find_exercise, check_step_work]
+    runs-on: ubuntu-latest
+    env:
+      ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
 
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-        - name: Get response templates
-          uses: actions/checkout@v4
-          with:
-            repository: skills/exercise-toolkit
-            path: exercise-toolkit
-            ref: v0.4.0
+      - name: Get response templates
+        uses: actions/checkout@v4
+        with:
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.4.0
 
-        - name: Create comment - add step content
-          run: |
-            gh issue comment "$ISSUE_URL" \
-              --body-file "$STEP_2_FILE"
-          env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create comment - add step content
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file "$.github/steps/2-2-add-ui-guidelines.md"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-        - name: Create comment - watching for progress
-          run: |
-            gh issue comment "$ISSUE_URL" \
-              --body-file exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
-          env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create comment - watching for progress
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-        - name: Disable current workflow and enable next one
-          run: |
-            gh workflow disable "Step 2-2"
-            gh workflow enable "Step 2-3"
-          env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Disable current workflow and enable next one
+        run: |
+          gh workflow disable "Step 2-2"
+          gh workflow enable "Step 2-3"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

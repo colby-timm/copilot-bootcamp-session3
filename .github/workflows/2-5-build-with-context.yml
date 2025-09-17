@@ -1,4 +1,4 @@
-name: Step 2-5 - Build with Context
+name: Step 2-5 # Build with Context
 
 on:
   push:
@@ -6,13 +6,11 @@ on:
       - main
   workflow_dispatch:
 
-  permissions:
-    contents: read
-    actions: write
-    issues: write
+permissions:
+  contents: read
+  actions: write
+  issues: write
 
-  env:
-    STEP_2_FILE: ".github/steps/2-5-build-with-context.md"
 
 jobs:
   find_exercise:
@@ -130,16 +128,16 @@ jobs:
       - name: Success
         run: echo "Build with context checks passed."
       
-    post_next_step_content:
-      name: Post next step content
-      needs: [find_exercise, check_step_work]
-      runs-on: ubuntu-latest
-      env:
-        ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
+  post_next_step_content:
+    name: Post next step content
+    needs: [find_exercise, check_step_work]
+    runs-on: ubuntu-latest
+    env:
+      ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
 
-      steps:
-        - name: Disable current workflow and enable next one
-          run: |
-            gh workflow disable "Step 2-5"
-          env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Disable current workflow and enable next one
+        run: |
+          gh workflow disable "Step 2-5"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
