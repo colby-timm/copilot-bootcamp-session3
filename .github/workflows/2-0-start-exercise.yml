@@ -72,6 +72,7 @@ jobs:
           for workflow_file in .github/workflows/*.yml; do
             # Extract the workflow name from the file
             workflow_name=$(grep "^name:" "$workflow_file" | head -1 | sed 's/name: *//' | sed 's/ *#.*//')
+            echo "Extracted workflow name: '$workflow_name' from file: $workflow_file"
 
             # Skip Step 2-0 (current workflow) to avoid disabling itself
             if [[ "$workflow_name" != "Step 2-0" ]]; then
@@ -83,9 +84,5 @@ jobs:
       - name: Enable next workflow
         run: |
           gh workflow enable "Step 2-1"
-          gh workflow disable "Step 2-2"
-          gh workflow disable "Step 2-3"
-          gh workflow disable "Step 2-4"
-          gh workflow disable "Step 2-5"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
