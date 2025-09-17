@@ -83,5 +83,9 @@ jobs:
       - name: Enable next workflow
         run: |
           gh workflow enable "Step 2-1"
+          gh workflow disable "Step 2-2"
+          gh workflow disable "Step 2-3"
+          gh workflow disable "Step 2-4"
+          gh workflow disable "Step 2-5"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
