@@ -1,9 +1,6 @@
 name: Step 2-4 # Add Coding Guidelines
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
