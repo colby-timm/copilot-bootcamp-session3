@@ -15,6 +15,7 @@ jobs:
   find_exercise:
     name: Find Exercise Issue
     uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.4.0
+    continue-on-error: true
   
   check_step_work:
     name: Check step work
