@@ -12,7 +12,7 @@ permissions:
   issues: write
 
 env:
-  STEP_1_FILE: ".github/steps/2-1-preparing.md"
+  STEP_2_FILE: ".github/steps/2-1-add-requirements-context.md"
 
 jobs:
   start_exercise:
@@ -46,7 +46,7 @@ jobs:
         id: build-comment
         uses: skills/action-text-variables@v2
         with:
-          template-file: ${{ env.STEP_1_FILE }}
+          template-file: ${{ env.STEP_2_FILE }}
           template-vars: |
             login: ${{ github.actor }}
             full_repo_name: ${{ github.repository }}
@@ -72,6 +72,7 @@ jobs:
           for workflow_file in .github/workflows/*.yml; do
             # Extract the workflow name from the file
             workflow_name=$(grep "^name:" "$workflow_file" | head -1 | sed 's/name: *//' | sed 's/ *#.*//')
+            echo "Extracted workflow name: '$workflow_name' from file: $workflow_file"
 
             # Skip Step 2-0 (current workflow) to avoid disabling itself
             if [[ "$workflow_name" != "Step 2-0" ]]; then
