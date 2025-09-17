@@ -58,6 +58,7 @@ jobs:
           grep -q 'mark a task as complete' docs/functional-requirements.md
 
       - name: Check copilot-instructions.md references requirements
+        id: check-copilot-instructions-md
         run: |
           grep -q 'functional-requirements.md' .github/copilot-instructions.md
 
