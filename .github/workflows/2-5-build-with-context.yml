@@ -45,15 +45,6 @@ jobs:
         
         # START: Check practical exercise
 
-      - name: Check for MUI package
-        id: check_mui
-        continue-on-error: true
-        run: |
-          if ! grep -q '@mui/material' package.json; then
-            echo "@mui/material not found in package.json!"
-            exit 1
-          fi
-
       - name: Check for tests
         id: check_tests
         continue-on-error: true
@@ -67,12 +58,9 @@ jobs:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           template-vars: |
             step_number: 2-5
-            passed: ${{ steps.check_mui.outcome == 'success' && steps.check_tests.outcome == 'success' }
+            passed: ${{ steps.check_tests.outcome == 'success' }
             results_table:
-              - description: "The MUI package should be present in frontend dependencies."
-                passed: ${{ steps.check_mui.outcome == 'success' }}
-                error_message: "@mui/material is not found in packages/frontend/package.json."
-              - description: "Tests should be present."
+              - description: "Tests should be present for the code generated."
                 passed: ${{ steps.check_tests.outcome == 'success' }}
                 error_message: "No test files found (e.g., *test.js)."
 

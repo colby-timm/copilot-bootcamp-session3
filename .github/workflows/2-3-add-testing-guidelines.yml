@@ -52,8 +52,6 @@ jobs:
             echo "docs/testing-guidelines.md not found!"
             exit 1
           fi
-          grep -qi 'unit' docs/testing-guidelines.md
-          grep -qi 'integration' docs/testing-guidelines.md
 
       - name: Check copilot-instructions.md references testing-guidelines
         id: check_copilot_instructions

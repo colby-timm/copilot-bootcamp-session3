@@ -1,23 +1,23 @@
 ## Review
 
-_Congratulations, you've completed session 3 of the Copilot Bootcamp tutorial and learned a lot about GitHub Copilot!_
+_Congratulations, you've completed session 2 of the AI Coding Assistant Enablement Bootcamp and learned a lot about GitHub Copilot!_
 
 <img src="https://octodex.github.com/images/jetpacktocat.png" alt=celebrate width=200 align=right>
 
 
 Here's a recap of your accomplishments:
 
-- Used Copilot Agent Mode to guide the creation of key project context files
+- Practiced instructing Copilot in your own words to document project standards
 - Added functional requirements documentation to clarify app features
 - Established UI guidelines for consistency, responsiveness, and accessibility
 - Documented testing guidelines covering unit, integration, and end-to-end tests
 - Summarized coding style and code quality principles for maintainable code
-- Practiced instructing Copilot in your own words to automate and document project standards
+- Used Copilot Agent Mode to build the app using the project context files
 
 ### What's next?
 
 - Session 3
-  - Run through a discovery exercise to generate a feature backlog 
+  - Discovery and design
 - Continue working on this project
   - Use Copilot to add filtering functionality for the items list
   - Add search functionality to the application
