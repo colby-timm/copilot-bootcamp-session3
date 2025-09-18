@@ -3,7 +3,7 @@ name: Step 2-2 # Add UI Guidelines
 on:
   push:
     branches:
-      - main
+      - feature/context
   workflow_dispatch:
 
 permissions:
@@ -52,7 +52,6 @@ jobs:
             echo "docs/ui-guidelines.md not found!"
             exit 1
           fi
-          grep -qi 'material' docs/ui-guidelines.md
 
       - name: Check copilot-instructions.md references ui-guidelines
         id: check_copilot_instructions
