@@ -58,7 +58,7 @@ jobs:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           template-vars: |
             step_number: 2-5
-            passed: ${{ steps.check_tests.outcome == 'success' }
+            passed: ${ steps.check_tests.outcome == 'success' }
             results_table:
               - description: "Tests should be present for the code generated."
                 passed: ${{ steps.check_tests.outcome == 'success' }}
