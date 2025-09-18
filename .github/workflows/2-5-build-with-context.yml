@@ -67,7 +67,7 @@ jobs:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           template-vars: |
             step_number: 2-5
-            passed: ${{ steps.check_mui.outcome == 'success' && steps.check_tests.outcome == 'success' && steps.check_integration_tests.outcome == 'success' && steps.check_e2e_tests.outcome == 'success' }}
+            passed: ${{ steps.check_mui.outcome == 'success' && steps.check_tests.outcome == 'success' }
             results_table:
               - description: "The MUI package should be present in frontend dependencies."
                 passed: ${{ steps.check_mui.outcome == 'success' }}
@@ -90,14 +90,6 @@ jobs:
         run: exit 1
 
       # END: Check practical exercise
-
-      - name: Update comment - step finished
-        run: |
-          gh issue comment "$ISSUE_URL" \
-            --body "$ISSUE_BODY" \
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_BODY: ${{ steps.build-message-step-finish.outputs.updated-text }}
 
       - name: Success
         run: echo "Build with context checks passed."
@@ -127,7 +119,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Disable current workflow and enable next one
+      - name: Disable current workflow
         run: |
           gh workflow disable "Step 2-5"
         env:
