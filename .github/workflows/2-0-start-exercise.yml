@@ -21,8 +21,8 @@ jobs:
     name: Start Exercise
     uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.4.0
     with:
-      exercise-title: "AI Coding Assistant Enablement Bootcamp: Session 2"
-      intro-message: "Welcome to the AI Coding Assistant Enablement Bootcamp: Session 2! 🚀 This guided experience will take you through the creation of context documents that will enable Copilot to build an application tailored to your needs. Get ready to experience the power of AI-assisted coding in a cloud development environment! 💻✨"
+      exercise-title: "AI Coding Assistant Enablement Bootcamp Session 2"
+      intro-message: "Welcome to the AI Coding Assistant Enablement Bootcamp Session 2! 🚀 This guided experience will take you through the creation of context documents that will enable Copilot to build an application tailored to your needs. Get ready to experience the power of AI-assisted coding in a cloud development environment! 💻✨"
 
   post_next_step_content:
     name: Post next step content
