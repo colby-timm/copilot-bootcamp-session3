@@ -1,37 +1,35 @@
 # Step 2-1: Add Functional Requirements Context
 
 ## Goal
-Create a clear set of functional requirements for the TODO app to guide future development and ensure all core features are documented.
+Create a clear set of functional requirements to expand the TODO app, so that all core features are documented for future development.
 
 ## Instructions
 
-### :keyboard: Activity: Add Functional Requirements Context
+### :keyboard: Activity: Launch a Codespace for this repository and create a new branch
 
-In this exercise, you'll guide GitHub Copilot's Agent mode to create a functional requirements document for the TODO app.
+Click the below button to open the **Create Codespace** page in a new tab. Use the default configuration.
+
+   [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/{{full_repo_name}}?quickstart=1)
+
+:pencil2: Create a new branch called `feature/context`. :pencil2:
 
 #### :keyboard: Activity: Ask Copilot to create functional requirements
 
-To ensure the app's core features are clearly documented, you will:
-
 1. Open the **Copilot** chat panel and switch to **Agent** mode using the dropdown menu.
-2. In the Copilot chat input field, ask Copilot to create a new file at `docs/functional-requirements.md` that lists the core functional requirements for the TODO app. You can use your own words, as long as the following requirements are clearly included:
-   - The user can add a task to the TODO list, including a due date.
-   - The user can edit a task in their TODO list or its due date by clicking on the text of the task or on its due date.
-   - The user can delete a task from their TODO list by clicking on a trash can icon to the right of the due date.
-   - The user can mark a task as complete by checking a checkbox to the left of the text for the task.
+2. In the Copilot chat input field, ask Copilot to create a new file at `docs/functional-requirements.md` that lists the core functional requirements you want for your TODO app, for example: the user can add a due date to a task, the task can be edited, the tasks are sorted in a specific order, etc. Rmember to make sure that your intent is clear!
 3. Ask Copilot to update `copilot-instructions.md` to reference the new `functional-requirements.md` file.
 
-#### Expectations
-- Copilot should create the `docs/functional-requirements.md` file with the provided requirements.
-- Copilot should update `copilot-instructions.md` to reference the new requirements doc.
 
 #### Success Criteria
+To complete this exercise successfully, ensure that:
+- A new `feature/context` branch is pushed
 - `docs/functional-requirements.md` exists and contains the specified requirements.
 - `copilot-instructions.md` is updated to reference `functional-requirements.md`.
 
 If you encounter any issues, you can:
-- Ask Copilot to fix specific problems
+- Double check that the newly pushed branch is called `feature/context`
 - Review that `docs/functional-requirements.md` was created and `copilot-instructions.md` was updated
+- Ask Copilot to fix specific problems
 
 
 ## Why?

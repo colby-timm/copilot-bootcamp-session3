@@ -3,7 +3,7 @@ name: Step 2-1
 on:
   push:
     branches:
-      - main
+      - feature/context
   workflow_dispatch:
 
 permissions:
@@ -52,10 +52,6 @@ jobs:
             echo "docs/functional-requirements.md not found!"
             exit 1
           fi
-          grep -q 'add a task' docs/functional-requirements.md
-          grep -q 'edit a task' docs/functional-requirements.md
-          grep -q 'delete a task' docs/functional-requirements.md
-          grep -q 'mark a task as complete' docs/functional-requirements.md
 
       - name: Check copilot-instructions.md references requirements
         id: check-copilot-instructions-md
