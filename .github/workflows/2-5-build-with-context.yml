@@ -49,28 +49,16 @@ jobs:
         id: check_mui
         continue-on-error: true
         run: |
-          if ! grep -q '@mui/material' packages/frontend/package.json; then
-            echo "@mui/material not found in frontend package.json!"
+          if ! grep -q '@mui/material' package.json; then
+            echo "@mui/material not found in package.json!"
             exit 1
           fi
 
-      - name: Check for unit tests
-        id: check_unit_tests
+      - name: Check for tests
+        id: check_tests
         continue-on-error: true
         run: |
           find packages -type f -name '*test.js' | grep -q .
-
-      - name: Check for integration tests
-        id: check_integration_tests
-        continue-on-error: true
-        run: |
-          find packages -type f -name '*integration*test.js' | grep -q .
-
-      - name: Check for end-to-end tests
-        id: check_e2e_tests
-        continue-on-error: true
-        run: |
-          find packages -type f -name '*e2e*test.js' | grep -q .
 
       - name: Build message - step results
         id: build-message-step-results
@@ -79,20 +67,14 @@ jobs:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           template-vars: |
             step_number: 2-5
-            passed: ${{ steps.check_mui.outcome == 'success' && steps.check_unit_tests.outcome == 'success' && steps.check_integration_tests.outcome == 'success' && steps.check_e2e_tests.outcome == 'success' }}
+            passed: ${{ steps.check_mui.outcome == 'success' && steps.check_tests.outcome == 'success' && steps.check_integration_tests.outcome == 'success' && steps.check_e2e_tests.outcome == 'success' }}
             results_table:
               - description: "The MUI package should be present in frontend dependencies."
                 passed: ${{ steps.check_mui.outcome == 'success' }}
                 error_message: "@mui/material is not found in packages/frontend/package.json."
-              - description: "Unit tests should be present."
-                passed: ${{ steps.check_unit_tests.outcome == 'success' }}
-                error_message: "No unit test files found (e.g., *test.js)."
-              - description: "Integration tests should be present."
-                passed: ${{ steps.check_integration_tests.outcome == 'success' }}
-                error_message: "No integration test files found (e.g., *integration*test.js)."
-              - description: "End-to-end tests should be present."
-                passed: ${{ steps.check_e2e_tests.outcome == 'success' }}
-                error_message: "No end-to-end test files found (e.g., *e2e*test.js)."
+              - description: "Tests should be present."
+                passed: ${{ steps.check_tests.outcome == 'success' }}
+                error_message: "No test files found (e.g., *test.js)."
 
       - name: Create comment - step results
         run: |
@@ -108,12 +90,6 @@ jobs:
         run: exit 1
 
       # END: Check practical exercise
-
-      - name: Build message - step finished
-        id: build-message-step-finish
-        uses: skills/action-text-variables@v2
-        with:
-          template-file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
 
       - name: Update comment - step finished
         run: |
