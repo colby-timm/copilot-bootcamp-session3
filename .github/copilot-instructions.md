@@ -6,6 +6,6 @@ This file contains high-level instructions for GitHub Copilot to follow when gen
 
 ## Documentation Overview
 
-The project documentation will be built during the bootcamp sessions.
+The project documentation will be built during the bootcamp episodes.
 
 - [Project Overview](../docs/project-overview.md) - Overview of the project
