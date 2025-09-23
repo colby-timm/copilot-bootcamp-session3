@@ -29,9 +29,7 @@ Simply copy the exercise to your account, then wait **about 20 seconds** for the
 >
 > ![Include all branches checkbox](/.github/assets/fork-include-branches.png)
 
-![Copy Exercise Badge](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)
-
-Link: <https://github.com/new?template_owner=ilan-klinghofer&template_name=copilot-bootcamp-starter&owner=%40me&name=copilot-bootcamp-agent-mode-basics&description=Exercise:+Implement+item+deletion+with+GitHub+Copilot&visibility=public>
+[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=ilan-klinghofer&template_name=copilot-bootcamp-starter&owner=%40me&name=copilot-bootcamp-agent-mode-basics&description=Exercise:+Implement+item+deletion+with+GitHub+Copilot&visibility=public)
 
 ### Having Trouble?
 
