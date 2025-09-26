@@ -1,4 +1,4 @@
-name: Step 3-3 # Generate Architecture Documentation
+name: Step 3-2 # Generate Epics and Stories
 
 on:
   push:
@@ -90,9 +90,33 @@ jobs:
 
       # END: Check practical exercise
 
-      - name: Success
-        run: echo "Cloud architecture overview is present and correct."
+      - name: Build message - step finished
+        id: build-message-step-finish
+        uses: skills/action-text-variables@v2
+        with:
+          template-file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
+          template-vars: |
+            next_step_number: 3-4
 
+      - name: Update comment - step finished
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body "$ISSUE_BODY" \
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_BODY: ${{ steps.build-message-step-finish.outputs.updated-text }}
+
+      - name: Success
+        run: echo "The epics and stories document is present and correct."
+
+  post_next_step_content:
+    name: Post next step content
+    needs: [find_exercise, check_step_work]
+    runs-on: ubuntu-latest
+    env:
+      ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
+
+    steps:
       - name: Checkout
         uses: actions/checkout@v5
 
@@ -106,12 +130,20 @@ jobs:
       - name: Create comment - add step content
         run: |
           gh issue comment "$ISSUE_URL" \
-            --body-file ".github/steps/3-x-review.md"
+            --body-file ".github/steps/3-4-implement-story.md"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Disable current workflow
+      - name: Create comment - watching for progress
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Disable current workflow and enable next one
         run: |
           gh workflow disable "Step 3-3"
+          gh workflow enable "Step 3-4"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
