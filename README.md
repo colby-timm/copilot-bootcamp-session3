@@ -1,48 +1,49 @@
-# GitHub Copilot Bootcamp: Agent Mode Basics
+# GitHub Copilot Bootcamp: Discovery and Design
 
-## Overview
+## Quick Start (Skill Lab)
 
-Learn how to use GitHub Copilot's Agent mode to handle complex, multi-step coding tasks.
+1. Fork this repository to your own GitHub account.
+2. After the fork finishes, open the Actions tab in your fork - a GitHub Actions workflow should start automatically.
+3. When the workflow completes, a GitHub Issue will be created in your fork to guide the next steps of the lab.
 
-## Welcome
+That's it. The lab automation (workflow + seeded issue) is the only thing you need to verify to begin.
 
-- **Who is this for**: Developers at any experience level looking to leverage AI-assisted coding with GitHub Copilot.
-- **What you'll learn**: How to use GitHub Copilot Agent mode to handle complex, multi step coding tasks across both frontend and backend code.
-- **What you'll build**: You will implement item deletion functionality in a full-stack JavaScript application.
-- **Prerequisites**:
-	- Basic knowledge of JavaScript, React, and Express
-	- Familiarity with [VS Code](https://code.visualstudio.com/)
-	- GitHub Copilot subscription or trial
-- **How long**: This exercise takes less than 30 minutes to complete.
+## What This Repo Represents
 
-In this exercise, you will:
+This is a lightweight full-stack JavaScript starter (React frontend + Express backend) used in the Copilot Bootcamp to demonstrate how GitHub Copilot (especially Agent mode) can help you:
 
-1. Use GitHub Copilot's Agent mode to implement delete functionality
-2. Learn how Copilot can help you make changes across multiple files in a project
-3. Experience how Copilot can understand both frontend and backend code to create a cohesive solution
+- Understand multi-file changes
+- Coordinate frontend + backend updates
+- Implement small features (e.g., item deletion) quickly and safely
 
-### How to start this exercise
+## If Something Doesn't Happen
 
-Simply copy the exercise to your account, then wait **about 20 seconds** for the setup to complete, then **refresh the page**.
+If you do NOT see a workflow run within ~30 seconds of forking:
 
-> **Important:** Make sure to check the **"Include all branches"** checkbox when creating your repository. This is required for the exercise to work properly.
->
-> ![Include all branches checkbox](/.github/assets/fork-include-branches.png)
+- Refresh the Actions tab once
+- Ensure Actions are enabled for your fork (Repository Settings > Actions)
+- Manually trigger any visible workflow if it shows a "Run workflow" button
 
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=ilan-klinghofer&template_name=copilot-bootcamp-starter&owner=%40me&name=copilot-bootcamp-agent-mode-basics&description=Exercise:+Implement+item+deletion+with+GitHub+Copilot&visibility=public)
+If the expected Issue wasn't created after the workflow succeeds:
 
-### Having Trouble?
+- Open the workflow run log and look for any red (failed) steps
+- Re-run the workflow (top-right "Re-run jobs")
 
-When copying the exercise, we recommend the following settings:
+## Next Steps After Automation
 
-- For owner, choose your personal account or an organization to host the repository.
-- Prefer a public repository (private repos consume Actions minutes).
+Once the Issue appears, follow its guidance to work through the exercise using Copilot Agent mode. The original longer README was intentionally simplified for this skill lab.
 
-If the exercise isn't ready in 20 seconds, check the Actions tab:
+## Tech Stack Snapshot
 
-1. See if a workflow job is still running.
-2. If a job failed, open an issue with logs.
+- Frontend: React
+- Backend: Express
+- Testing: Jest
+- Package management: npm workspaces (monorepo)
+
+## License & Conduct
+
+&copy; 2025 Slalom • [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) • [MIT License](https://gh.io/mit)
 
 ---
 
-&copy; 2025 Slalom &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+Happy hacking - fork, watch the workflow, find the Issue, and dive in with Copilot.
