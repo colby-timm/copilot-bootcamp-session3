@@ -38,7 +38,3 @@ If you encounter any issues, you can:
 - Double check that the newly pushed branch is called `feature/requirements-and-documentation`
 - Review that `docs/prd-todo.md` was created
 - Ask Copilot to fix specific problems
-
-## Why?
-
-Using Copilot to help you extract requirements from meeting conversations and Slack conversations allows you to create clear, structured PRD documentation that you can then decompose into epics and user stories.

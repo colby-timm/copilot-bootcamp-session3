@@ -2,7 +2,7 @@
 
 ## Goal
 
-Create Mermaid diagrams that shows the high-level flow of the current React frontend and Express backend.
+Create an architecture markdown document that include Mermaid diagrams that include system context and `creating a TODO` sequence diagrams.
 
 > 📝 **Note:** To be able to preview Mermaid diagrams, install the VS Code extension in your GitHub Codespace: [Mermaid Chart Extension](https://marketplace.visualstudio.com/items?itemName=MermaidChart.vscode-mermaid-chart).
 
@@ -29,7 +29,3 @@ If you encounter any issues, you can:
 - Review that `docs/cloud-architecture-overview.md` was created
 - Double-check that your changes were pushed to the `feature/requirements-and-documentation` branch
 - Ask Copilot to fix specific problems
-
-## Why?
-
-Builds skill in translating local code into an evolvable cloud architecture while separating immediate scope from future growth.
