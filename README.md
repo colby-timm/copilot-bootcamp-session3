@@ -44,4 +44,4 @@ Once the Issue appears, follow its guidance to work through the exercise using C
 
 ---
 
-Happy hacking - fork, watch the workflow, find the Issue, and dive in with Copilot.
+> 🎉 Happy hacking – fork, watch the workflow, find the Issue, and dive in with Copilot.
