@@ -22,7 +22,7 @@ jobs:
     uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.4.0
     with:
       exercise-title: "AI Coding Assistant Enablement Bootcamp Session 3"
-      intro-message: "Welcome to the AI Coding Assistant Enablement Bootcamp Session 3! 🚀 This guided experience will take you through the collecting requirements and generating documentation using Copilot to build a PRD, epics and stories and architectural documentation. Get ready to experience the power of AI-assisted requirements and document generation in a cloud development environment! 💻✨"
+      intro-message: "Welcome to the AI Coding Assistant Enablement Bootcamp - Session 3! 🚀 In this session, you’ll learn how to use Copilot to streamline your development workflow from start to finish. We’ll walk through collecting requirements and generating a Product Requirements Document (PRD), creating epics and stories with acceptance criteria and technical requirements, building architectural documentation, and finally implementing changes from a story using Copilot. Get ready to experience the power of AI-assisted requirements gathering and documentation in a cloud development environment! 💻✨"
 
   post_next_step_content:
     name: Post next step content

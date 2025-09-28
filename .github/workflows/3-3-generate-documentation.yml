@@ -1,4 +1,4 @@
-name: Step 3-3 # Generate Epics and Stories
+name: Step 3-3 # Generate Documentation
 
 on:
   push:
@@ -107,7 +107,7 @@ jobs:
           ISSUE_BODY: ${{ steps.build-message-step-finish.outputs.updated-text }}
 
       - name: Success
-        run: echo "The epics and stories document is present and correct."
+        run: echo "The system context and sequence  documentation is present and correct."
 
   post_next_step_content:
     name: Post next step content

@@ -1,4 +1,4 @@
-# GitHub Copilot Bootcamp: Discovery and Design
+# GitHub Copilot Bootcamp
 
 ## Quick Start (Skill Lab)
 
@@ -10,7 +10,7 @@ That's it. The lab automation (workflow + seeded issue) is the only thing you ne
 
 ## What This Repo Represents
 
-This is a lightweight full-stack JavaScript starter (React frontend + Express backend) used in the Copilot Bootcamp to demonstrate how GitHub Copilot (especially Agent mode) can help you:
+This is a lightweight full-stack JavaScript starter (React frontend + Express backend) used in the Copilot Bootcamp to demonstrate how GitHub Copilot (especially Agent mode) to help accelerate you by:
 
 - Understand multi-file changes
 - Coordinate frontend + backend updates
@@ -26,19 +26,19 @@ If you do NOT see a workflow run within ~30 seconds of forking:
 
 If the expected Issue wasn't created after the workflow succeeds:
 
-- Open the workflow run log and look for any red (failed) steps
+- Open the workflow run log and look for any failed steps
 - Re-run the workflow (top-right "Re-run jobs")
 
 ## Next Steps After Automation
 
-Once the Issue appears, follow its guidance to work through the exercise using Copilot Agent mode. The original longer README was intentionally simplified for this skill lab.
+Once the Issue appears, follow its guidance to work through the exercise using Copilot Agent mode.
 
 ## Tech Stack Snapshot
 
 - Frontend: React
 - Backend: Express
 - Testing: Jest
-- Package management: npm workspaces (monorepo)
+- Package management: npm workspaces
 
 ## License & Conduct
 
