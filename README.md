@@ -1,4 +1,4 @@
-# AI Accelerated Engineering Bootcamp
+# AI Accelerated Engineering Bootcamp - Session 3
 
 > **Empowering teams to leverage AI coding assistants for faster, higher‑quality software delivery—with the right context, workflows, and guardrails.**
 
