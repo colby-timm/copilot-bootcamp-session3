@@ -1,10 +1,10 @@
 # Review
 
-_Congratulations, you've completed episode 3 of the AI Coding Assistant Enablement Bootcamp and learned a lot about GitHub Copilot!_
+_Congratulations, you've completed session 3 of the AI Coding Assistant Enablement Bootcamp and learned a lot about GitHub Copilot!_
 
 ![Celebrate: Jetpacktocat](https://octodex.github.com/images/jetpacktocat.png)
 
-Here's a recap of your accomplishments in Episode 3 (Requirements and Documentation focus):
+Here's a recap of your accomplishments in Session 3 (Requirements and Documentation focus):
 
 - Collected and distilled stakeholder inputs / raw artifacts into structured functional requirements (`docs/prd-todo.md`).
 - Generated epics and decomposed them into user stories with acceptance criteria (`docs/epics-and-stories.md`).
@@ -39,4 +39,4 @@ You'll move from foundational usage to power techniques:
 - **Switch between AI models**: [GitHub Copilot with Different Models](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/using-github-copilot-chat#selecting-a-different-model)
 - **Complete documentation**: [GitHub Copilot Documentation](https://docs.github.com/en/copilot)
 
-Congratulations on completing Episode 3 of the AI Coding Assistant Enablement Bootcamp for the SE capability, and thank you for participating! We hope you've gained valuable insights into how GitHub Copilot can enhance your development workflow and productivity.
+Congratulations on completing Sessions 3 of the AI Coding Assistant Enablement Bootcamp for the SE capability, and thank you for participating! We hope you've gained valuable insights into how GitHub Copilot can enhance your development workflow and productivity.

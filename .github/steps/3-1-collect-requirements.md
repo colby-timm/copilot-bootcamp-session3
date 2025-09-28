@@ -17,11 +17,14 @@ Click the below button to open the **Create Codespace** page in a new tab. Use t
 #### :keyboard: Activity: Ask Copilot to create a PRD
 
 1. Open the **Copilot** chat panel and switch to **Agent** mode using the dropdown menu.
-1. Switch the model to `GPT-5`.
-1. Copilot chat allows you to tag files in your repo by typing `#` followed by the name of the file, which will show an auto-complete for your files.
-1. In the Copilot chat input field, ask copilot to `summarize the MVP and Post-MVP requirements using #file:09162025-requirements-meeting.vtt and #file:09172025-slack-conversation-export.txt`.
-1. Note how the agent is able to generate all MVP, Post-MVP and out-of-scope requirements.
-1. Ask Copilot to create the PRD based on the requirements. An example is: `create a PRD using the PRD template in #file:prd-template.md based on the requirements defined in #file:09162025-requirements-meeting.vtt and #file:09172025-slack-conversation-export.txt and store it in docs/prd-todo.md. Do not make assumptions about the requirements.`.
+2. Switch the model to `GPT-5`.
+3. Copilot chat allows you to reference files in your repo by typing `#` followed by the name of the file, which will show an auto-complete for your files. You can also click `Add Context...` option in the Copilot chat interface.
+4. In the Copilot chat input field, ask copilot to summarize the MVP and Post-MVP requirements using `docs/artifacts/09162025-requirements-meeting.vtt` and `docs/artifacts/09172025-slack-conversation-export.txt`.
+5. Review how the agent is able to generate all MVP, Post-MVP and out-of-scope requirements in the chat.
+6. Ask Copilot to create the PRD using the PRD template in `docs/templates/prd-template.md` based on the requirements defined in `docs/artifacts/09162025-requirements-meeting.vtt` and `docs/artifacts/09172025-slack-conversation-export.txt` and store it in `docs/prd-todo.md`.
+7. Commit and push your changes.
+
+> 📝 **Note:** To help Copilot explicitly follow the requirements you can include a phrase like `Do not make assumptions about the requirements` in your prompt.
 
 #### Success Criteria
 

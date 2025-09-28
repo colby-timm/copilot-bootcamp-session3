@@ -49,4 +49,4 @@ The project uses npm workspaces to manage the monorepo structure. You can:
 
 ## Deployment
 
-General Guidelines, Code Style and Testing Practices will be covered in the bootcamp episodes.
+General Guidelines, Code Style and Testing Practices will be covered in the bootcamp sessions.
