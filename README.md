@@ -1,4 +1,4 @@
-# AI Coding Assistant Enablement Bootcamp
+# AI Accelerated Engineering Bootcamp
 
 > **Empowering teams to leverage AI coding assistants for faster, higher‑quality software delivery—with the right context, workflows, and guardrails.**
 
